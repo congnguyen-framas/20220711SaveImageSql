@@ -29,21 +29,21 @@ namespace SaveImageSql
 
         private void InsertImage(string fileName, byte[] image)
         {
-            using (var connection = new SqlConnection("Data Source=192.168.180.210;Initial Catalog=RecycledAppTEST;User ID=readmin;Password=Recycle123$;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+            using (var connection = new SqlConnection("Data Source=192.168.180.210;Initial Catalog=DOGE_WH;User ID=wh_doge_top;Password=G$x825W@I424V999U642P758N177f;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
             {
                 var param = new DynamicParameters();
                 param.Add("@fileName", fileName);
                 param.Add("@image", image);
-                var result = connection.Execute("Insert into tblImages (FileName, Image) values (@fileName,@image)", param);
+                var result = connection.Execute("Insert into tblImagesTest (FileName, Image) values (@fileName,@image)", param);
             }
         }
 
         private void LoadData()
         {
             List<ImageModel> result;
-            using (var connection = new SqlConnection("Data Source=192.168.180.210;Initial Catalog=RecycledAppTEST;User ID=readmin;Password=Recycle123$;Connect Timeout=30"))
+            using (var connection = new SqlConnection("Data Source=192.168.180.210;Initial Catalog=DOGE_WH;User ID=wh_doge_top;Password=G$x825W@I424V999U642P758N177f;Connect Timeout=30"))
             {
-                result = connection.Query<ImageModel>("select * from tblImages").ToList();
+                result = connection.Query<ImageModel>("select * from tblImagesTest").ToList();
                 gridData.DataSource = result;
             }
         }
@@ -92,6 +92,7 @@ namespace SaveImageSql
             {
                 
                 pictureBox1.Image = ConvertByteArrayToimage((byte[])res[e.RowIndex].Image);
+                pictureBox1.AutoScrollOffset = Point.Ceiling(Location);
             }
         }
     }

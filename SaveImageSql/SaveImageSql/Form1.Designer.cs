@@ -52,7 +52,8 @@ namespace SaveImageSql
             // 
             this.pictureBox1.Location = new System.Drawing.Point(394, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1498, 1017);
+            this.pictureBox1.Size = new System.Drawing.Size(411, 347);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -85,7 +86,7 @@ namespace SaveImageSql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(823, 383);
             this.Controls.Add(this.gridData);
             this.Controls.Add(this.txtFilename);
             this.Controls.Add(this.label1);
